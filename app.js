@@ -10,6 +10,24 @@ trash.getElementById("dropdownMenuLink").style.opacity = 0.5;
 trash.getElementById("dropdownMenuLink").disabled = true;
 trash.getElementById("dropdownYearMenu").style.opacity = 0.5;
 trash.getElementById("dropdownYearMenu").disabled = true;
+const counterDiv = trash.getElementById('counter')
+
+// api call
+const fetchData = async () => {
+  const BACKEND_API_URL = 'https://backend.akshayrathi.com'
+  const query = '/analytics?moduleName=CPI_SPI_CALCULATOR';
+  const url = BACKEND_API_URL + query;
+  const response = await fetch(url);
+  const data = await response.json();
+  const totalView = data.totalViews.toString();
+  let innerHtml = ''
+  for (let digit of totalView) {
+    innerHtml += `<div style="margin: 0px 2px">${digit}</div>`
+  }
+ counterDiv.innerHTML = innerHtml
+};
+
+fetchData();
 Load();
 Click();
 
