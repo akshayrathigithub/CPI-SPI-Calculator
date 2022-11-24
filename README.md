@@ -11,6 +11,8 @@ The Project is live at <a href="https://projects.akshayrathi.com/cpi-spi-calcula
 
 <img src="./Screenshot/firstSem_2.png">
 
+<img src="./Screenshot/granular_grading.jpg">
+
 <img src="./Screenshot/cpiEstimation.png">
 
 ## Installation and Setup Instructions
