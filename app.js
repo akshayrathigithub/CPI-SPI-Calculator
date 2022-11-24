@@ -645,11 +645,8 @@ function AddCourseBtn(e) {
                                 <a class="btn btn-success dropdown-toggle" href="#" role="button" id="Extra_Course_${count}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
                                 <div class="dropdown-menu" aria-labelledby="Extra_Course_${count}">
                                     <a class="dropdown-item" href="#">A/A*</a>
-                                    <a class="dropdown-item" href="#">B+</a>
                                     <a class="dropdown-item" href="#">B</a>
-                                    <a class="dropdown-item" href="#">C+</a>
                                     <a class="dropdown-item" href="#">C</a>
-                                    <a class="dropdown-item" href="#">D+</a>
                                     <a class="dropdown-item" href="#">D</a>
                                     <a class="dropdown-item" href="#">E</a>
                                     <a class="dropdown-item" href="#">F</a>
