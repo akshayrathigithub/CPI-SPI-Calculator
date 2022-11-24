@@ -24,7 +24,7 @@ const fetchData = async () => {
   for (let digit of totalView) {
     innerHtml += `<div style="margin: 0px 2px">${digit}</div>`
   }
- counterDiv.innerHTML = innerHtml
+  counterDiv.innerHTML = innerHtml
 };
 
 fetchData();
@@ -81,8 +81,7 @@ function Click() {
 
 function OnYearClick(e) {
   Student = e.target.id;
-  document.getElementById("dropdownYearMenu").textContent = `${
-    e.target.textContent
+  document.getElementById("dropdownYearMenu").textContent = `${e.target.textContent
     }`;
   if (e.target.textContent === "MTech/MSc") {
     trash.getElementById("Semester_MTech/MSc").style.display = "initial";
@@ -122,8 +121,7 @@ function OnTypeClick(e) {
   else {
     trash.getElementById("dropdownYearMenu").textContent = "Semester Completed";
   }
-  trash.getElementById("dropdownTypeLink").textContent = `${
-    e.target.textContent
+  trash.getElementById("dropdownTypeLink").textContent = `${e.target.textContent
     }`;
   trash.getElementById("dropdownMenuLink").disabled = true;
   trash.getElementById("dropdownMenuLink").style.opacity = 0.5;
@@ -137,18 +135,15 @@ function OnDeptClick(e) {
   trash.getElementById("dropdownMenuLink").style.opacity = 0.5;
   trash.getElementById("btn_cal").style.display = "initial";
   trash.getElementById("FirstSemCard").id = `FirstSem_${e.target.textContent}`;
-  trash.getElementById("SecondSemCard").id = `SecondSem_${
-    e.target.textContent
+  trash.getElementById("SecondSemCard").id = `SecondSem_${e.target.textContent
     }`;
   trash.getElementById("SummerSem-1").id = `SummerOne_${e.target.textContent}`;
   trash.getElementById("SummerSem-2").id = `SummerTwo_${e.target.textContent}`;
-  trash.getElementById("SummerSem-3").id = `SummerThree_${
-    e.target.textContent
+  trash.getElementById("SummerSem-3").id = `SummerThree_${e.target.textContent
     }`;
   trash.getElementById("SummerSem-4").id = `SummerFour_${e.target.textContent}`;
 
-  trash.getElementById("dropdownMenuLink").textContent = `${
-    e.target.textContent
+  trash.getElementById("dropdownMenuLink").textContent = `${e.target.textContent
     }`;
 
   if (Department.id % 2 === 0) {
@@ -926,13 +921,28 @@ function Calculation() {
           TotalCredits = TotalCredits + SubjectCredit;
           break;
         }
+        case "B+": {
+          TotalCreditsPoint = TotalCreditsPoint + 9 * SubjectCredit;
+          TotalCredits = TotalCredits + SubjectCredit;
+          break;
+        }
         case "B": {
           TotalCreditsPoint = TotalCreditsPoint + 8 * SubjectCredit;
           TotalCredits = TotalCredits + SubjectCredit;
           break;
         }
+        case "C+": {
+          TotalCreditsPoint = TotalCreditsPoint + 7 * SubjectCredit;
+          TotalCredits = TotalCredits + SubjectCredit;
+          break;
+        }
         case "C": {
           TotalCreditsPoint = TotalCreditsPoint + 6 * SubjectCredit;
+          TotalCredits = TotalCredits + SubjectCredit;
+          break;
+        }
+        case "D+": {
+          TotalCreditsPoint = TotalCreditsPoint + 5 * SubjectCredit;
           TotalCredits = TotalCredits + SubjectCredit;
           break;
         }
