@@ -955,7 +955,7 @@ function Calculation() {
           break;
         }
         case "E": {
-          TotalCreditsPoint = TotalCreditsPoint + 2 * SubjectCredit;
+          TotalCreditsPoint = TotalCreditsPoint + 0 * SubjectCredit;
           TotalCredits = TotalCredits + SubjectCredit;
           break;
         }
