@@ -48,6 +48,7 @@ function Load() {
     "MTH",
     "ME",
     "PHY",
+    "SDS",
     "SummerSem-1",
     "SummerSem-2",
     "SummerSem-3",
