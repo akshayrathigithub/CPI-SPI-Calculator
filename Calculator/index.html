@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-131501251-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-131501251-1");
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="CPI/SPI Calculator created for IITK student community by AKSHAY RATHI"
+    />
+    <meta
+      name="keywords"
+      content="CPI IITK,SPI IITK,cpi,spi,cpi iitk,spi iitk,calculate cpi iitk,calculate spi iitk, akshay rathi iitk, Akshay Rathi,IITK AKSHAY RATHI"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./Assets/bootstrap.min.css" />
+
+    <title>Cpi/SPI Calculator</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="text-center h1 my-4">CPI/SPI Calculator</h1>
+      <div class="container">
+        <div class="row text-center my-4">
+          <div class="col-lg-4">
+            <div class="dropdown">
+              <button
+                class="btn btn-success dropdown-toggle my-2"
+                href="#"
+                role="button"
+                id="grade-btn"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                CPI/SPI
+              </button>
+              <div
+                class="dropdown-menu"
+                id="grade-list"
+                aria-labelledby="grade-btn"
+              >
+                <a class="dropdown-item" href="#" id="CPI">CPI</a>
+                <a class="dropdown-item" href="#" id="SPI">SPI</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="dropdown">
+              <button
+                class="btn btn-success dropdown-toggle my-2"
+                href="#"
+                role="button"
+                id="semester-btn"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Semester Completed
+              </button>
+              <div
+                class="dropdown-menu"
+                id="semesters-list"
+                aria-labelledby="semester-btn"
+              >
+                <a class="dropdown-item" href="#" id="one">First Semester</a>
+                <a class="dropdown-item" href="#" id="two">Second Semester</a>
+                <a class="dropdown-item" href="#" id="third">Third Semester</a>
+                <a class="dropdown-item" href="#" id="four">Fourth Semester</a>
+                <a class="dropdown-item" href="#" id="five">Fifth Semester</a>
+                <a class="dropdown-item" href="#" id="six">Sixth Semester</a>
+                <a class="dropdown-item" href="#" id="seven"
+                  >Seventh Semester</a
+                >
+                <a class="dropdown-item" href="#" id="eight">Eighth Semester</a>
+                <a class="dropdown-item" href="#" id="MTech/MSc">MTech/MSc</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="dropdown">
+              <button
+                class="btn btn-success dropdown-toggle my-2"
+                href="#"
+                role="button"
+                id="department-btn"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Department
+              </button>
+              <div
+                class="dropdown-menu"
+                id="department-list"
+                aria-labelledby="department-btn"
+              >
+                <a class="dropdown-item" href="#">CHM</a>
+                <a class="dropdown-item" href="#">AE</a>
+                <a class="dropdown-item" href="#">BSBE</a>
+                <a class="dropdown-item" href="#">CHE</a>
+                <a class="dropdown-item" href="#">CE</a>
+                <a class="dropdown-item" href="#">CSE</a>
+                <a class="dropdown-item" href="#">ES</a>
+                <a class="dropdown-item" href="#">ECO</a>
+                <a class="dropdown-item" href="#">EE</a>
+                <a class="dropdown-item" href="#">MSE</a>
+                <a class="dropdown-item" href="#">MTH</a>
+                <a class="dropdown-item" href="#">ME</a>
+                <a class="dropdown-item" href="#">PHY</a>
+                <a class="dropdown-item" href="#">SDS</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center" id="semesters-container">
+        <div class="container" id="calculation-container">
+          <div class="row my-4">
+            <div class="col-6">
+              <button class="btn btn-success" id="calculate-grade">
+                Calculate CPI
+              </button>
+            </div>
+            <div class="col-6">
+              <button id="recalculate-grade" class="btn btn-danger">
+                Calculate Again
+              </button>
+            </div>
+            <div
+              class="modal"
+              id="error-modal-container"
+              tabindex="-1"
+              role="dialog"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Error</h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Please Choose Grade of at least one Course</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container" id="info-container">
+          <h4 id="message" class="card-title text-center h2">Your CPI is</h4>
+          <div class="text-center my-4">
+            <button id="estimate-btn" class="btn btn-primary">
+              Estimate CPI
+            </button>
+          </div>
+          <div class="container mx-4" id="estimate-container">
+            <p class="h4 my-4" id="current-cpi">Your Current CPI</p>
+            <p class="h4 my-4" id="credits-done">Total Credit Done</p>
+            <p class="h4 my-2">
+              Enter Total Credits You Expect To Do
+              <span
+                ><input
+                  id="expected-credits"
+                  style="margin: auto"
+                  class="form-control my-1 w-50 text-center"
+                  type="number"
+                  placeholder="Excluding S/X Course"
+              /></span>
+            </p>
+            <p class="h4 mt-4">
+              Your Expected CPI is
+              <span
+                ><input
+                  id="expected-cpi"
+                  style="margin: auto"
+                  class="form-control my-2 px-4 w-50 text-center"
+                  type="number"
+                  placeholder="Enter Expected CPI"
+              /></span>
+            </p>
+
+            <div class="modal" id="modal-container" tabindex="-1" role="dialog">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Error</h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>TotalCredits/Expected CPI can not be left empty</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal" id="modalAlert" tabindex="-1" role="dialog">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Impossible</h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p id="modalAlertMess"></p>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <p id="Estimate_btn" class="btn btn-success my-4">Estimate</p>
+            </div>
+            <br />
+            <div class="text-center">
+              <p class="h4" id="estimated-spi">
+                You Need to Score SPI in Remaining Semesters
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="my-4">
+      <div class="container">
+        <div class="card">
+          <h2 class="card-header text-center">How to Use</h2>
+          <ul class="list-group">
+            <li class="list-group-item font-weight-bold">
+              * Enter the latest grade recieved in Repeated Course
+            </li>
+            <li class="list-group-item">
+              Select SPI or CPI , then select Semester/Semester Completed and
+              then your Department
+            </li>
+            <li class="list-group-item">
+              Select coursewise Grade and hit Calculate Button
+            </li>
+            <li class="list-group-item">
+              Courses having S/X are not calculated in CPI/SPI
+            </li>
+            <li class="list-group-item">
+              Courses not done can be left empty and 'Add Course' can be used to
+              add extra Courses.Adding Course name is not Mandatory
+            </li>
+            <li class="list-group-item">
+              You can also estimate your CPI by entering expected CPI and total
+              credit(total credit done at end of any sem( ex-413 for Chemistry
+              at end of 8 sem))
+            </li>
+            <li class="list-group-item">
+              For estimation you will need to enter your all Course grades till
+              recent semester
+            </li>
+            <li class="list-group-item">
+              MTech/MSc student can add their course manually
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-dark text-center" style="margin-top: 11vw">
+      <div class="container text-white">
+        <p class="pt-4 h4">
+          Designed And Developed By
+          <span
+            ><a data-toggle="modal" href="#" data-target="#exampleModalCenter"
+              ><u>Akshay Rathi</u></a
+            ></span
+          >
+        </p>
+      </div>
+      <div>
+        <p class="h4 text-white py-2">Copyright @ 2018</p>
+      </div>
+      <div style="width: 100%">
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            font-size: 25px;
+            color: white;
+          "
+          id="counter"
+        >
+          <div style="margin: 0px 2px">0</div>
+          <div style="margin: 0px 2px">0</div>
+          <div style="margin: 0px 2px">0</div>
+          <div style="margin: 0px 2px">0</div>
+          <div style="margin: 0px 2px">0</div>
+          <div style="margin: 0px 2px">0</div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModalCenter"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalCenterTitle">
+                Akshay Rathi<br /><span>
+                  <p>Chemistry<br />I-106/Hall-5</p>
+                </span>
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>
+                Suggestion and Correction are Welcomed (<span
+                  ><a
+                    href="https://github.com/akshayrathigithub/CPI-SPI-Calculator"
+                    target="blank"
+                    >Github</a
+                  ></span
+                >)
+              </p>
+              <p>
+                Designed and Developed using HTML5, Bootstrap and Javascript.
+              </p>
+              <p>
+                Other Project-
+                <span
+                  ><a
+                    href="https://projects.akshayrathi.com/taxi-sharing-platform/"
+                    target="blank"
+                    >Taxi-Sharing-Platform</a
+                  ></span
+                >
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./Assets/jquery-3.4.1.slim.min.js"></script>
+    <script src="./Assets/popper.min.js"></script>
+    <script src="./Assets/bootstrap.min.js"></script>
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>

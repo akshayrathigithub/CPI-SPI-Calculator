@@ -1,0 +1,34 @@
+{
+  "name": "cpi-spi-calculator",
+  "version": "2.0.0",
+  "description": "CPI/SPI Calculator is a simple and elegant CGPA Calculator made using JavaScript(ES6), that can be used to calculate CGPA quickly.Calculator has over 89k+ views and provides simple way of selecting grade corresponding to courses instead of going through tedious mathematical calculation. It has courses of all Departments of IITK.<br> The Project is live at <a href=\"https://projects.akshayrathi.com/cpi-spi-calculator/\" target=\"_blank\">link</a>",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "cors": "^2.8.5"
+  },
+  "nodemonConfig": {
+    "ignore": ["/node_modules", "/Screenshot"],
+    "delay": 1000,
+    "watch": ["server.js", "Calculator/"],
+    "ext": "js,html"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akshayrathigithub/CPI-SPI-Calculator.git"
+  },
+  "author": "Akshay Rathi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akshayrathigithub/CPI-SPI-Calculator/issues"
+  },
+  "homepage": "https://github.com/akshayrathigithub/CPI-SPI-Calculator#readme"
+}
