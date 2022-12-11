@@ -8,7 +8,7 @@ const COURSE_TYPE = {
 /**
  * Department wise courses list.
  * New Departments can be added here following semester courses.
- * Following courses generated using  puppeteer:
+ * Following courses generated using puppeteer:
  *
  */
 export const CHM = {

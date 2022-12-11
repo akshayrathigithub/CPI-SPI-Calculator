@@ -81,7 +81,6 @@ export const gradeToPointMapping = {
   D: 4,
   E: 0,
   F: 0,
-  Drop: 0,
 };
 
 export const DEPARTMENTS = {

@@ -201,16 +201,18 @@ function addNewCourseToSemester(e) {
 
 // grade calculation: CPI or SPI
 function gradeCalculation() {
+  totalCreditsDone = 0;
+  totalDoneCreditsScore = 0;
   const allRenderedCourses = doc.querySelectorAll(".container tbody tr");
   for (const course of allRenderedCourses) {
     const gradeDropdown = course.querySelectorAll("td")[2];
     const gradeElement = gradeDropdown.querySelector("a");
 
-    // consider only courses where grade is selected
+    // consider only courses where grade is selected, excluding drop
     if (gradeElement?.textContent) {
       const grade = gradeElement.textContent;
-      if (grade) {
-        const gradePoint = gradeToPointMapping[grade];
+      const gradePoint = gradeToPointMapping[grade];
+      if (gradePoint > -1) {
         const creditElement = course.querySelectorAll("td")[1];
         const creditsEditable = creditElement.querySelector("input");
         if (creditsEditable) {
