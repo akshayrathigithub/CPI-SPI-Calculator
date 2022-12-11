@@ -1,6 +1,6 @@
 # CPI-SPI-Calculator
 
-CPI/SPI Calculator is a simple and elegant CGPA Calculator made using JavaScript(ES6), that can be used to calculate CGPA quickly.Calculator has over 89k+ views and provides simple way of selecting grade corresponding to courses instead of going through tedious mathematical calculation. It has courses of all Departments of IITK.<br>
+CPI/SPI Calculator is a simple and elegant CGPA Calculator made using JavaScript(ES6), that can be used to calculate CGPA quickly.Calculator has over 160k+ views and provides simple way of selecting grade corresponding to courses instead of going through tedious mathematical calculation. It has courses of all Departments of IITK.<br>
 The Project is live at <a href="https://projects.akshayrathi.com/cpi-spi-calculator/" target="_blank">link</a>
 
 ## Project Screen Shot(s)

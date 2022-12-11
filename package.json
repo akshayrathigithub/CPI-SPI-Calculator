@@ -4,22 +4,38 @@
   "description": "CPI/SPI Calculator is a simple and elegant CGPA Calculator made using JavaScript(ES6), that can be used to calculate CGPA quickly.Calculator has over 89k+ views and provides simple way of selecting grade corresponding to courses instead of going through tedious mathematical calculation. It has courses of all Departments of IITK.<br> The Project is live at <a href=\"https://projects.akshayrathi.com/cpi-spi-calculator/\" target=\"_blank\">link</a>",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "npm run start-dev-server",
+    "prepare": "husky install",
+    "start-dev-server": "concurrently \"nodemon server.js\" \"opener http://localhost:12345\"",
+    "format": "prettier --write \"./Calculator/**/*.{js,css,html}\" \"./Calculator/Assets\""
   },
   "dependencies": {
-    "express": "^4.17.1",
     "body-parser": "^1.18.3",
-    "concurrently": "^4.1.0",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
   },
   "nodemonConfig": {
-    "ignore": ["/node_modules", "/Screenshot"],
+    "ignore": [
+      "/node_modules",
+      "/Screenshot"
+    ],
     "delay": 1000,
-    "watch": ["server.js", "Calculator/"],
+    "watch": [
+      "server.js",
+      "Calculator/"
+    ],
     "ext": "js,html"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "concurrently": "^7.6.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.1.0",
+    "nodemon": "^2.0.20",
+    "opener": "^1.5.2",
+    "prettier": "^2.8.1"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   },
   "repository": {
     "type": "git",
