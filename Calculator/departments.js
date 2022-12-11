@@ -5,6 +5,12 @@ const COURSE_TYPE = {
   ELECTIVE: "elective",
 };
 
+/**
+ * Department wise courses list.
+ * New Departments can be added here following semester courses.
+ * Following courses generated using  puppeteer:
+ *
+ */
 export const CHM = {
   one: [
     {
