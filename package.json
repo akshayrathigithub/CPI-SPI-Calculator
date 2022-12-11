@@ -7,7 +7,8 @@
     "start": "npm run start-dev-server",
     "prepare": "husky install",
     "start-dev-server": "concurrently \"nodemon server.js\" \"opener http://localhost:12345\"",
-    "format": "prettier --write \"./Calculator/**/*.{js,css,html}\" \"./Calculator/Assets\""
+    "prod-server": "node server.js",
+    "format": "prettier --write \"./Calculator/**/*.{js,css,html}\" \"./server.js\" \"!./Calculator/Assets\""
   },
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -32,10 +33,11 @@
     "lint-staged": "^13.1.0",
     "nodemon": "^2.0.20",
     "opener": "^1.5.2",
-    "prettier": "^2.8.1"
+    "prettier": "^2.8.1",
+    "reload": "^3.2.0"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "**/*": "prettier --write"
   },
   "repository": {
     "type": "git",

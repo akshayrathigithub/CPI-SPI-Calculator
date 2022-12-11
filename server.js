@@ -3,6 +3,7 @@ const http = require("http");
 const path = require("path");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const reload = require("reload");
 
 // our localhost port
 const port = 12345;
@@ -28,4 +29,14 @@ router.get("/", (req, res) => {
   res.sendFile(path.join(__dirname + "/Calculator/index.html"));
 });
 
-server.listen(port, () => console.log(`Listening on port ${port}`));
+reload(app)
+  .then(function (reloadReturned) {
+    // Reload started, start web server
+    server.listen(port, () => console.log(`Listening on port ${port}`));
+  })
+  .catch(function (err) {
+    console.error(
+      "Reload could not start, could not start server/sample app",
+      err
+    );
+  });
