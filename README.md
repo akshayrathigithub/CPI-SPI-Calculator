@@ -17,7 +17,25 @@ The Project is live at <a href="https://projects.akshayrathi.com/cpi-spi-calcula
 
 ## Installation and Setup Instructions
 
-Clone down this repository and open index.html file in your favorite browser.
+Clone down this repository. You will need `node` and `npm` installed globally on your machine.
+
+Installation:
+
+```
+npm install
+```
+
+To Start Server:
+
+```
+npm start
+```
+
+To Visit App UI:
+
+```
+localhost:12345
+```
 
 ## Built With
 
