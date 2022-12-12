@@ -1,3 +1,7 @@
+/**
+ * This branch contains old code, which is not maintained anymore.
+ * Raise PR/MR to master/main branch
+ */
 let trash = document;
 let count = 0;
 let Student, Department, SelectorBtn, Clone, Type_Of, fake_No, YearArray, SPI_Sem;
